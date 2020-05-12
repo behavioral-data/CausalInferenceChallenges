@@ -19,9 +19,14 @@ This code block lists the steps taken to run the same experiments as are include
 For each experiment listed in the AXIS BLOCK in Analyze_results_annotated.ipynb, run the experiment using run_experiment_annotated.py. The settings for a given experiment are given in the filename for a given
 axi experiment
 e.g.
-'experiment_1_0_0_0_0_60' -> python run_experiment.py -exp 1_0_0_0_0 -size 60 -lr <lr> -bs <bs> -n_it <n_it>
-'experiment_0_0_0_1_0_60' -> python run_experiment.py -exp 0_0_0_1_0 -size 60 -lr <lr> -bs <bs> -n_it <n_it>
-'experiment_1_0_0_0_0_60_nuser4000' -> python run_experiment.py -exp 0_0_0_1_0 -size 60 -n_user 4000 -lr <lr> -bs <bs> -n_it <n_it>
+```
+#experiment_1_0_0_0_0_60' -> 
+python run_experiment.py -exp 1_0_0_0_0 -size 60 -lr <lr> -bs <bs> -n_it <n_it>
+#'experiment_0_0_0_1_0_60' -> 
+python run_experiment.py -exp 0_0_0_1_0 -size 60 -lr <lr> -bs <bs> -n_it <n_it>
+#'experiment_1_0_0_0_0_60_nuser4000' -> 
+python run_experiment.py -exp 0_0_0_1_0 -size 60 -n_user 4000 -lr <lr> -bs <bs> -n_it <n_it>
+```
 
 running commands listed above should return outputs with the correct name format, so running the commands
 above (and corresponding ones for all other experiments) should be sufficient to get outputs for analysis.

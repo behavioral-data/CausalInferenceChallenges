@@ -20,11 +20,13 @@ For each experiment listed in the AXIS BLOCK in Analyze_results_annotated.ipynb,
 axi experiment
 e.g.
 ```
-#experiment_1_0_0_0_0_60' -> 
+# experiment_1_0_0_0_0_60
 python run_experiment.py -exp 1_0_0_0_0 -size 60 -lr <lr> -bs <bs> -n_it <n_it>
-#'experiment_0_0_0_1_0_60' -> 
+
+# experiment_0_0_0_1_0_60
 python run_experiment.py -exp 0_0_0_1_0 -size 60 -lr <lr> -bs <bs> -n_it <n_it>
-#'experiment_1_0_0_0_0_60_nuser4000' -> 
+
+# experiment_1_0_0_0_0_60_nuser4000
 python run_experiment.py -exp 0_0_0_1_0 -size 60 -n_user 4000 -lr <lr> -bs <bs> -n_it <n_it>
 ```
 
@@ -40,4 +42,14 @@ lr = 0.0001
 bs = 512
 n_it = 40000
 
+One each experiment runs, go through Analyze_results_annotated.ipynb to run random bootstrap causality experiments on the propensity scores returned by models, and finally produce similar plots to the paper.
+
 # Instructions for adding model
+
+The most simple way to do this will be closely follow the code structure of either logistic regression or HBERT models. For instance, take your model code/training script, and fit it into the structure of the propensity model training function in HBERT_simple.py.
+
+Specifically, it is important for your model to have a 'propensity_model' wrapper like the Hierarchical_BERT_propensity_model class.
+
+It should include a 'fit' function that trains the model, as well as a 'score' function which takes a list of examples in the given data format and returns propensity scores for it.
+
+Finally, if using data of a different format than either raw text (as in HBERT data) or BoW (as in data_chi), you must implement a data script in the format of these 2, and include it in run_experiment_annotated.py

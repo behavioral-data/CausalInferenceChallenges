@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>CORAL</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script type="text/javascript" src="http://livejs.com/live.js"></script>
+	==
+	</head>
+	<body class="is-preload">
+
+		<!-- Sidebar -->
+			<section id="sidebar">
+				<div class="inner">
+					<nav>
+						<ul>
+							<li><a href="#intro">Project</a></li>
+							<li><a href="#paper">Paper</a></li>
+							<li><a href="#repro">Reproducability</a></li>
+							<li><a href="#one">Team</a></li>
+							<li><a href="#three">Acknowledgements</a></li>
+						</ul>
+					</nav>
+				</div>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- -->
+					<section id="intro" class="wrapper style1 fullscreen fade-up">
+						<div class="inner">
+							<h1>CORAL: COde RepresentAtion Learning</h1>
+							<p class => Data collection and analysis has always been a key component of
+								the scientifc process. In recent years, although an
+								increasingly large volume of data science code has become available
+								online these artifacts have remained largely un-analyzed at scale as
+								processing them requires domain-specifc expertise.</p>
+
+							<p>CORAL is a weakly supervised transformer architecture designed to "understand" computer code and answer previously unresolvable questions about scientific analysis.</p>
+							<!-- <p class =>However, such notebooks have remained
+								largely unanalyzed at scale, as labels are absent and require
+								expert domain knowledge to generate. We present a new classification
+								task for labeling computational notebook cells as stages in
+								the data analysis process (i.e., data import, wrangling, exploration,
+								modeling, and evaluation).</p> -->
+
+							<h2>What does CORAL provide?</h2>
+							<div class="features">
+								<section>
+									<img  class="icon  major" src="images/noun_Deep Learning.svg" alt="Nueral Network">
+									<h3>Weakly Supervised Transformer for Calculating Code Embeddings</h3>
+									<p>CORAL provides an extendable framework and accompanying Python library for embedding arbitrary code snippets for static analysis.</p>
+								</section>
+								<section>
+									<img  class="icon major" src="images/noun_task.svg" alt="Task">
+									<h3>Benchmark Evaluation Task</h3>
+									<p>We present a corpus of 100 expert-annotated notebooks and an accompanying task for labeling computational notebook cells as stages in the data analysis process</p>
+								</section>
+								<!-- <section>
+									<span class="icon solid major fa-cog"></span>
+									<h3>Sed erat ullam corper</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-desktop"></span>
+									<h3>Veroeros quis lorem</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon solid major fa-link"></span>
+									<h3>Urna quis bibendum</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section>
+								<section>
+									<span class="icon major fa-gem"></span>
+									<h3>Aliquam urna dapibus</h3>
+									<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+								</section> -->
+							</div>
+							<ul class="actions">
+								<li><a href="#paper" class="button scrolly">Research Paper</a></li>
+							</ul>
+						</div>
+					</section>
+				<!-- Paper -->
+				<section id="paper" class="wrapper style2 fade-up">
+					<div class="inner">
+						<h2>Paper</h2>
+						<h3><a href="CORAL_KDD_2020.pdf">[PDF]</a></h3>
+						<p><b>Abstract:</b> Large scale analysis of computational notebooks holds the promise
+							of better understanding the data science process, quantifying differences
+							between scientific domains, and providing insights to the
+							builders of scientific toolkits. However, such notebooks have remained
+							largely unanalyzed at scale, as labels are absent and require
+							expert domain knowledge to generate. We present a new classification
+							task for labeling computational notebook cells as stages in
+							the data analysis process (i.e., data import, wrangling, exploration,
+							modeling, and evaluation). For this task, we propose a novel weakly
+							supervised transformer architecture for computing joint representations
+							of data science code from both abstract syntax trees and
+							natural language annotations. We show that our model, leveraging
+							only easily-available weak supervision, achieves a 35% increase in
+							accuracy over expert-supplied heuristics. Our model enables us to
+							examine a set of 118,000 Jupyter Notebooks to uncover common
+							data analysis patterns. In the largest analysis of scientific code to
+							date, we relate our public dataset of notebooks to a large corpus of
+							academic articles, finding that notebook characteristics significantly
+							correlate with the citation count of corresponding papers.</p>
+						<!-- <div class="features">
+							<section>
+								<span class="icon solid major fa-code"></span>
+								<h3>Lorem ipsum amet</h3>
+								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+							</section>
+							<section>
+								<span class="icon solid major fa-lock"></span>
+								<h3>Aliquam sed nullam</h3>
+								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+							</section>
+							<section>
+								<span class="icon solid major fa-cog"></span>
+								<h3>Sed erat ullam corper</h3>
+								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+							</section>
+							<section>
+								<span class="icon solid major fa-desktop"></span>
+								<h3>Veroeros quis lorem</h3>
+								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+							</section>
+							<section>
+								<span class="icon solid major fa-link"></span>
+								<h3>Urna quis bibendum</h3>
+								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+							</section>
+							<section>
+								<span class="icon major fa-gem"></span>
+								<h3>Aliquam urna dapibus</h3>
+								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+							</section>
+						</div> -->
+						<!-- <ul class="actions">
+							<li><a href="generic.html" class="button">Learn more</a></li>
+						</ul> -->
+					</div>
+				</section>
+				<!-- Data -->
+				<section id="repro" class="wrapper style3 fade-up">
+					<div class="inner">
+						<h2>Reproducability</h2>
+						<p>All code used in this publication are available on <a href= 'https://github.com/AshleyZG/CORALGitHub'><i class="fab fa-github"></i> GitHub</a>.</p>
+						<h3>Data</h3>
+						<ul class = "">
+							<li><u>UCSD Jupyter Notebook Corpus</u>: Available from the orginal researchers <a href = 'https://library.ucsd.edu/dc/object/bb2733859v'>here</a>.</li>
+							<li><u>Expert-Annotated Jupyter Notebooks</u>: Available on GitHub.</li>
+							<li><u>GORC Corpus</u>: Available on <a href = 'https://github.com/allenai/s2-gorc'>here</a> on AI2's GitHub repository. Additional code for pre-processing in the context of CORAL can be found on our project's repo.</li>
+
+						</ul>
+					</div>
+				</section>
+				<!-- One -->
+					<section id="one" class="wrapper style2 spotlights">
+						<div class="inner">
+						<h2>Team</h2>
+							<section>
+								<div class = "row">
+									<div class="col-6-xlarge col-6-large col-6-medium text-center">
+										<img class="headshot" src="images/ge.jpg" alt="">
+										<h3><a href="https://gezhangrp.com/">Ge Zhang</a>
+										</h3>
+									</div>
+									<div class=" col-6-xlarge col-6-large col-6-medium text-center">
+										<img class="headshot" src="images/mike.jpg" alt="">
+										<h3><a href="http://mikemerrill.io">Mike Merrill</a>
+										</h3>
+									</div>
+								</div>
+							</section>
+							<section>
+								<div class = "row">
+									<div class="col-4-large col-4-xlarge  text-center">
+										<img class="headshot" src="images/yang.jpg" alt="">
+										<h3><a href="https://yangliu.life/#/">Yang Liu</a>
+										</h3>
+									</div>
+									<div class="col-4-large col-4-xlarge text-center">
+										<img class=" headshot" src="images/jeff.png" alt="">
+										<h3><a href="https://homes.cs.washington.edu/~jheer/">Jeff Heer</a>
+										</h3>
+									</div>
+									<div class="col-4-large col-4-xlarge text-center">
+										<img class=" headshot" src="images/tim.jpg" alt=""> 
+										<h3><a href="http://www.timalthoff.com/" target="_new">Tim Althoff</a>
+
+										</h3>
+									</div>
+								</div>
+							</section>
+						</div>
+					</section>
+
+				
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1 fade-up">
+						<div class="inner">
+							<h2>Acknowledgements</h2>
+							<p>Test</p>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper style1-alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>CORAL</title>
+		<title>Causal Inference in Natural Language</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -24,7 +24,8 @@
 						<ul>
 							<li><a href="#intro">Project</a></li>
 							<li><a href="#paper">Paper</a></li>
-							<li><a href="#repro">Reproducability</a></li>
+							<li><a href="#tasks">Tasks</a></li>
+							<li><a href="#model">Model</a></li>
 							<li><a href="#one">Team</a></li>
 							<li><a href="#three">Acknowledgements</a></li>
 						</ul>
@@ -38,14 +39,15 @@
 				<!-- -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1>CORAL: COde RepresentAtion Learning</h1>
-							<p class => Data collection and analysis has always been a key component of
-								the scientifc process. In recent years, although an
-								increasingly large volume of data science code has become available
-								online these artifacts have remained largely un-analyzed at scale as
-								processing them requires domain-specifc expertise.</p>
+							<h1>Challenges and an Empirical Evaluation Framework for Causal Inference with Natural Language</h1>
+							<p class => Using natural language, such as text, for causal inference has enormous potential for impactful
+							research in the computational social sciences and other domains.</p>
 
-							<p>CORAL is a weakly supervised transformer architecture designed to "understand" computer code and answer previously unresolvable questions about scientific analysis.</p>
+							<p>However, evaluating cuasal inference models for natural language is very challenging, as ground truth causal
+							effects are few and far between.</p>
+
+							<p>In this work, we present a series of 6 tasks which together compose a principled empirical evaluation 
+							framework for causal inference in natural langauge.</p>
 							<!-- <p class =>However, such notebooks have remained
 								largely unanalyzed at scale, as labels are absent and require
 								expert domain knowledge to generate. We present a new classification
@@ -53,18 +55,22 @@
 								the data analysis process (i.e., data import, wrangling, exploration,
 								modeling, and evaluation).</p> -->
 
-							<h2>What does CORAL provide?</h2>
+							<h2>What do we contribute?</h2>
 							<div class="features">
 								<section>
-									<img  class="icon  major" src="images/noun_Deep Learning.svg" alt="Nueral Network">
-									<h3>Weakly Supervised Transformer for Calculating Code Embeddings</h3>
-									<p>CORAL provides an extendable framework and accompanying Python library for embedding arbitrary code snippets for static analysis.</p>
+									<img  class="icon major" src="images/noun_task.svg" alt="Task">
+									<h3>Six Evaluation Tasks</h3>
+									<p>Our primary contribution is a series of six tasks, inspired by real challenges in natural language.
+									Each task has a series of levels in increasing difficulty, allowing us to evaluate the specific strengths
+									and weaknesses of different models.</p>
 								</section>
 								<section>
-									<img  class="icon major" src="images/noun_task.svg" alt="Task">
-									<h3>Benchmark Evaluation Task</h3>
-									<p>We present a corpus of 100 expert-annotated notebooks and an accompanying task for labeling computational notebook cells as stages in the data analysis process</p>
+									<img  class="icon  major" src="images/noun_Deep Learning.svg" alt="Nueral Network">
+									<h3>SHERBERT Model</h3>
+									<p>SHERBERT is a novel cauSal HiERarchical variant of BERT, which effectively scales to long text inputs
+									by using multiple pre-trained BERT models to produce an intermediate embedding.</p>
 								</section>
+								
 								<!-- <section>
 									<span class="icon solid major fa-cog"></span>
 									<h3>Sed erat ullam corper</h3>
@@ -94,118 +100,119 @@
 				<!-- Paper -->
 				<section id="paper" class="wrapper style2 fade-up">
 					<div class="inner">
-						<h2>Paper</h2>
-						<h3><a href="CORAL_KDD_2020.pdf">[PDF]</a></h3>
-						<p><b>Abstract:</b> Large scale analysis of computational notebooks holds the promise
-							of better understanding the data science process, quantifying differences
-							between scientific domains, and providing insights to the
-							builders of scientific toolkits. However, such notebooks have remained
-							largely unanalyzed at scale, as labels are absent and require
-							expert domain knowledge to generate. We present a new classification
-							task for labeling computational notebook cells as stages in
-							the data analysis process (i.e., data import, wrangling, exploration,
-							modeling, and evaluation). For this task, we propose a novel weakly
-							supervised transformer architecture for computing joint representations
-							of data science code from both abstract syntax trees and
-							natural language annotations. We show that our model, leveraging
-							only easily-available weak supervision, achieves a 35% increase in
-							accuracy over expert-supplied heuristics. Our model enables us to
-							examine a set of 118,000 Jupyter Notebooks to uncover common
-							data analysis patterns. In the largest analysis of scientific code to
-							date, we relate our public dataset of notebooks to a large corpus of
-							academic articles, finding that notebook characteristics significantly
-							correlate with the citation count of corresponding papers.</p>
-						<!-- <div class="features">
-							<section>
-								<span class="icon solid major fa-code"></span>
-								<h3>Lorem ipsum amet</h3>
-								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-							</section>
-							<section>
-								<span class="icon solid major fa-lock"></span>
-								<h3>Aliquam sed nullam</h3>
-								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-							</section>
-							<section>
-								<span class="icon solid major fa-cog"></span>
-								<h3>Sed erat ullam corper</h3>
-								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-							</section>
-							<section>
-								<span class="icon solid major fa-desktop"></span>
-								<h3>Veroeros quis lorem</h3>
-								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-							</section>
-							<section>
-								<span class="icon solid major fa-link"></span>
-								<h3>Urna quis bibendum</h3>
-								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-							</section>
-							<section>
-								<span class="icon major fa-gem"></span>
-								<h3>Aliquam urna dapibus</h3>
-								<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-							</section>
-						</div> -->
-						<!-- <ul class="actions">
-							<li><a href="generic.html" class="button">Learn more</a></li>
-						</ul> -->
+						<h2>Paper (under review at KDD '20)</h2>
+						<h3><a href=https://drive.google.com/file/d/1DJ2K01-NXvgt6U6Q0QIVr2ZIXILkM4Yz/view>[PDF]</a></h3>
+						<p><b>Abstract:</b> Modeling of natural language for causal inference is challenging, due to its unstructured and high dimensional nature.
+						Despite these challenges, several models have been proposed and applied to computational social science questions.
+						However, it is typically impossible to evaluate the validity of these studies' results due to the absence of counterfactuals in real world data.
+						Without true counterfactuals, there is no principled way of determining which models correctly estimate treatment effects. 
+						We show that different models often disagree with one another on real world tasks, demonstrating a critical need for principled empirical evaluation.
+						To evaluate models for causal inference in natural language, we propose a framework using semi-synthetic data that reflects six key challenges of real world applications.
+						By controlling the underlying causal structure of these data, we know the ground truth treatment effects,
+						and can empirically evaluate the performance of nine commonly used models for causal inference.
+						We find that while each model has different strengths, all of them struggle with significant bias on at least one challenge.
+						Concerningly, on a challenge with no treatment effect present, 8 of the 9 models predicted a significant positive treatment effect, a false causal discovery.
+						The only exception is our novel hierarchical causal variant of BERT, SHERBERT, which further performs better than other models tested on most tasks.
+						While no benchmark can be fully representative of all challenges in natural language, the failure of all models on at least one challenge highlights the difficulty of causal inference in natural language and points to concrete areas for improvement.</p>
 					</div>
 				</section>
 				<!-- Data -->
-				<section id="repro" class="wrapper style3 fade-up">
+				<section id="tasks" class="wrapper style3 fade-up">
 					<div class="inner">
-						<h2>Reproducability</h2>
-						<p>All code used in this publication are available on <a href= 'https://github.com/AshleyZG/CORALGitHub'><i class="fab fa-github"></i> GitHub</a>.</p>
-						<h3>Data</h3>
-						<ul class = "">
-							<li><u>UCSD Jupyter Notebook Corpus</u>: Available from the orginal researchers <a href = 'https://library.ucsd.edu/dc/object/bb2733859v'>here</a>.</li>
-							<li><u>Expert-Annotated Jupyter Notebooks</u>: Available on GitHub.</li>
-							<li><u>GORC Corpus</u>: Available on <a href = 'https://github.com/allenai/s2-gorc'>here</a> on AI2's GitHub repository. Additional code for pre-processing in the context of CORAL can be found on our project's repo.</li>
-
-						</ul>
-					</div>
-				</section>
-				<!-- One -->
-					<section id="one" class="wrapper style2 spotlights">
-						<div class="inner">
-						<h2>Team</h2>
+						<h2>Tasks</h2>
+						<p>All code used for this publication, and datasets for each task, are available on <a href='https://github.com/behavioral-data/CausalInferenceChallenges'><i class="fab fa-github"></i> GitHub</a>.</p>
+						<p>Each task is designed to evaluate a model's ability to handle one of 6 different challenges in natural language.
+						Tasks have multiple levels of difficulty, allowing us to see how models perform at handling each challenge.</p>
+						<p>Tasks consist of semi-synthetic data, generated by inserting synthetic comments into real reddit users' post histories
+							according to a known probability distribution, allowing us to control the true ATE, and therefore empirically evaluate the bias of each model on each task.
+							Semi-synthetic data provides the best of both worlds: the realism of real world data, with the principled structure and known ATE of synthetic data.
+						</p>
+						<p>A description of each task is below. For more details, refer to the paper.</p>
+						<div class="features">
 							<section>
-								<div class = "row">
-									<div class="col-6-xlarge col-6-large col-6-medium text-center">
-										<img class="headshot" src="images/ge.jpg" alt="">
-										<h3><a href="https://gezhangrp.com/">Ge Zhang</a>
-										</h3>
-									</div>
-									<div class=" col-6-xlarge col-6-large col-6-medium text-center">
-										<img class="headshot" src="images/mike.jpg" alt="">
-										<h3><a href="http://mikemerrill.io">Mike Merrill</a>
-										</h3>
-									</div>
-								</div>
+								<span class="icon solid major fa-code"></span>
+								<h3>Linguistic Complexity</h3>
+								<p>Models should be able to recognize the mutual importance of different phrases.</p>
 							</section>
 							<section>
-								<div class = "row">
-									<div class="col-4-large col-4-xlarge  text-center">
-										<img class="headshot" src="images/yang.jpg" alt="">
-										<h3><a href="https://yangliu.life/#/">Yang Liu</a>
-										</h3>
-									</div>
-									<div class="col-4-large col-4-xlarge text-center">
-										<img class=" headshot" src="images/jeff.png" alt="">
-										<h3><a href="https://homes.cs.washington.edu/~jheer/">Jeff Heer</a>
-										</h3>
-									</div>
-									<div class="col-4-large col-4-xlarge text-center">
-										<img class=" headshot" src="images/tim.jpg" alt=""> 
-										<h3><a href="http://www.timalthoff.com/" target="_new">Tim Althoff</a>
-
-										</h3>
-									</div>
-								</div>
+								<span class="icon solid major fa-code"></span>
+								<h3>Signal Intensity</h3>
+								<p>Models should be able to detect weak signals.</p>
+							</section>
+							<section>
+								<span class="icon solid major fa-code"></span>
+								<h3>Order of Text</h3>
+								<p>Models should be able to distinguish between the order of posts.</p>
+							</section>
+							<section>
+								<span class="icon solid major fa-code"></span>
+								<h3>Strength of Selection Effect</h3>
+								<p>Models should be able to adjust for confounding, even when there is reduced overlap in the distribution of language between treated and untreated users.</p>
+							</section>
+							<section>
+								<span class="icon solid major fa-code"></span>
+								<h3>Number of Users</h3>
+								<p>Models would be able to perform well even with limited training data.</p>
+							</section>
+							<section>
+								<span class="icon major fa-code"></span>
+								<h3>Absence of Non-Zero Treatment Effect</h3>
+								<p>Models should not predict causality when none is present.</p>
 							</section>
 						</div>
-					</section>
+					</div>
+				</section>
+
+				<section id="model" class="wrapper style1 fade-up">
+					<div class="inner">
+						<h2>SHERBERT Model</h2>
+						<p>Our implementation of the SHERBERT model is available on <a href='https://github.com/behavioral-data/CausalInferenceChallenges'><i class="fab fa-github"></i> GitHub</a>.</p>
+						<p>SHERBERT is a novel cauSal HiERarchical variant of BERT, which effectively scales to long text inputs
+							by using multiple pre-trained BERT models to produce an intermediate embedding. </p>
+					</div>
+				</section>
+
+
+				<!-- One -->
+				<section id="one" class="wrapper style2 spotlights">
+					<div class="inner">
+					<h2>Team</h2>
+						<section>
+							<div class = "row">
+								<div class="col-6-xlarge col-6-large col-6-medium text-center">
+									<img class="headshot" src="images/galen.jpg" alt="">
+									<h3><a href="https://www.galenweld.com/">Galen Weld</a>
+									</h3>
+								</div>
+								<div class=" col-6-xlarge col-6-large col-6-medium text-center">
+									<img class="headshot" src="images/peter.jpg" alt="">
+									<h3><a href="https://homes.cs.washington.edu/~pawest/">Peter West</a>
+									</h3>
+								</div>
+							</div>
+						</section>
+						<section>
+							<div class = "row">
+								<div class="col-4-large col-4-xlarge  text-center">
+									<img class="headshot" src="images/david.jpg" alt="">
+									<h3><a href="http://darbour.github.io/">David Arbour</a>
+									</h3>
+								</div>
+								<div class="col-4-large col-4-xlarge text-center">
+									<img class=" headshot" src="images/ryan.jpg" alt="">
+									<h3><a href="http://ryanrossi.com/">Ryan A. Rossi</a>
+									</h3>
+								</div>
+								<div class="col-4-large col-4-xlarge text-center">
+									<img class=" headshot" src="images/tim.jpg" alt=""> 
+									<h3><a href="http://www.timalthoff.com/" target="_new">Tim Althoff</a>
+
+									</h3>
+								</div>
+							</div>
+						</section>
+					</div>
+				</section>
 
 				
 
@@ -213,7 +220,7 @@
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
 							<h2>Acknowledgements</h2>
-							<p>Test</p>
+							<p>We would like to thank Adobe Research for their support of this work.</p>
 						</div>
 					</section>
 
@@ -223,7 +230,7 @@
 			<footer id="footer" class="wrapper style1-alt">
 				<div class="inner">
 					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						<li>&copy; Galen Weld. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</div>
 			</footer>

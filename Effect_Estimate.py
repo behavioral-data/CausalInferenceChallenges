@@ -26,8 +26,76 @@ def get_effect_ATT(P,Z,Y, K = 10, mode = 'strat'):
         return get_effect_pw_ATT(P,Z,Y)
     else:
         assert(False)
+
+
+
         
+def get_effect_match(P,Z,Y, replacement=True, caliper=None, warning_tol=.1):
+    '''
+    full matching = each (or some?) control matched to one or more treated subjects (rosenbaum, 179) *without* replacement
+    
+    caliper?
+    We enforce a propensity score caliper equal to 0.1 standard
+    deviations of the estimated distribution, which discards any treated units for whom the
+    nearest control unit is not within a suitable distance.
+    from Mozer 2018: https://arxiv.org/abs/1801.00644, page 31
+     -> does this mean the distribution of all (both treated and untreated) propensity scores?
+     
+     
+    then again, rosenbaum (p. 169) recomends starting with .2
+    
+    vary caliber in terms of the standard deviation of the propensity scores, eg. .2 for 20% of a std away
+    '''
+    if not replacement:
+        assert(False) # not implemented yet (but it should be)
         
+    P_control = P[Z == 0]
+    Y_control = Y[Z == 0]
+    
+    P_treat = P[Z == 1]
+    Y_treat = Y[Z == 1]
+    
+    # if we match all the treated to the closest untreated with replacement, we have ATE on Treated (ATT)
+    # if we match all the untreated to the closest treated with replacement, we have ATE on Untreated (ATU?)
+    # I have no idea if this works, but let's try doing both to compute ATE
+    
+    diffs = [] # difference in outcome (treated - control)
+    dists = [] # differenence in propensity score (for caliper application)
+    
+    # todo!!! also implement this without replacement
+    for treat_index, p in enumerate(P_treat):        
+        # get match for p (closest point in control by propensity)
+        control_index = np.argmin( np.abs(P_control - p) )
+        diffs.append( Y_treat[treat_index] - Y_control[control_index] )
+        dists.append( np.abs( P_control[control_index] - p ) )
+        
+    for control_index, p in enumerate(P_control):
+        # get match for p (closest point in treat by propensity)
+        treat_index = np.argmin( np.abs(P_treat - p) )
+        diffs.append( Y_treat[treat_index] - Y_control[control_index] )
+        dists.append( np.abs( P_treat[treat_index] - p ) )
+    
+    
+    
+    
+    # CALIPER SECTION IS AGNOSTIC TO REPLACEMENT IMPLEMENTATION
+    # if using caliper, discard invalid matches
+    if caliper is not None:        
+        Valid = diffs < (caliper * P.std()) # caliper is fraction of standard deviation from the distribution
+        
+        #print('discarded {} by caliper'.format((1. - 1.*np.sum(Valid)/Valid.size)))
+        if (1. - 1.*np.sum(Valid)/Valid.size) > warning_tol:
+            print('WARNING: discarding {} of examples, exceeds tolerance of {}'.format((1. - 1.*np.sum(Valid)/Valid.size), warning_tol))
+        
+        diffs = np.array(diffs)[Valid]
+        
+    return np.average(diffs)
+
+
+
+
+
+
 def get_effect_match_ATT(P,Z,Y, replacement = True, caliper = None):
     '''
     

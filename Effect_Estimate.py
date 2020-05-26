@@ -30,7 +30,7 @@ def get_effect_ATT(P,Z,Y, K = 10, mode = 'strat'):
 
 
         
-def get_effect_match(P,Z,Y, replacement=True, caliper=None, warning_tol=.1):
+def get_effect_match(P,Z,Y, replacement=True, caliper=None, warning_tol=.1, randomize=False):
     '''
     full matching = each (or some?) control matched to one or more treated subjects (rosenbaum, 179) *without* replacement
     
@@ -60,18 +60,30 @@ def get_effect_match(P,Z,Y, replacement=True, caliper=None, warning_tol=.1):
     # I have no idea if this works, but let's try doing both to compute ATE
     
     diffs = [] # difference in outcome (treated - control)
-    dists = [] # differenence in propensity score (for caliper application)
+    dists = [] # difference in propensity score (for caliper application)
     
     # todo!!! also implement this without replacement
     for treat_index, p in enumerate(P_treat):        
         # get match for p (closest point in control by propensity)
-        control_index = np.argmin( np.abs(P_control - p) )
+        if randomize:
+            # get all the closest index, then pick one at random
+            distances_to_p = np.abs(P_control - p)
+            closest_points = (distances_to_p==min(distances_to_p)).nonzero()[0]
+            control_index = np.random.choice( closest_points )
+        else:
+            control_index = np.argmin( np.abs(P_control - p) )
         diffs.append( Y_treat[treat_index] - Y_control[control_index] )
         dists.append( np.abs( P_control[control_index] - p ) )
         
     for control_index, p in enumerate(P_control):
         # get match for p (closest point in treat by propensity)
-        treat_index = np.argmin( np.abs(P_treat - p) )
+        if randomize:
+            # get all the closest index, then pick one at random
+            distances_to_p = np.abs(P_treat - p)
+            closest_points = (distances_to_p==min(distances_to_p)).nonzero()[0]
+            treat_index = np.random.choice( closest_points )
+        else:
+            treat_index = np.argmin( np.abs(P_treat - p) )
         diffs.append( Y_treat[treat_index] - Y_control[control_index] )
         dists.append( np.abs( P_treat[treat_index] - p ) )
     
@@ -81,7 +93,7 @@ def get_effect_match(P,Z,Y, replacement=True, caliper=None, warning_tol=.1):
     # CALIPER SECTION IS AGNOSTIC TO REPLACEMENT IMPLEMENTATION
     # if using caliper, discard invalid matches
     if caliper is not None:        
-        Valid = diffs < (caliper * P.std()) # caliper is fraction of standard deviation from the distribution
+        Valid = dists < (caliper * P.std()) # caliper is fraction of standard deviation from the distribution
         
         #print('discarded {} by caliper'.format((1. - 1.*np.sum(Valid)/Valid.size)))
         if (1. - 1.*np.sum(Valid)/Valid.size) > warning_tol:

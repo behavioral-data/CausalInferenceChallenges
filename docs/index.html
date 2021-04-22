@@ -107,20 +107,21 @@
 				<!-- Paper -->
 				<section id="paper" class="wrapper style2 fade-up">
 					<div class="inner">
-						<h2>Paper (under review at KDD '20)</h2>
-						<h3><a href=https://drive.google.com/file/d/1DJ2K01-NXvgt6U6Q0QIVr2ZIXILkM4Yz/view>[PDF]</a></h3>
-						<p><b>Abstract:</b> Modeling of natural language for causal inference is challenging, due to its unstructured and high dimensional nature.
-						Despite these challenges, several models have been proposed and applied to computational social science questions.
-						However, it is typically impossible to evaluate the validity of these studies' results due to the absence of counterfactuals in real world data.
-						Without true counterfactuals, there is no principled way of determining which models correctly estimate treatment effects. 
-						We show that different models often disagree with one another on real world tasks, demonstrating a critical need for principled empirical evaluation.
-						To evaluate models for causal inference in natural language, we propose a framework using semi-synthetic data that reflects six key challenges of real world applications.
-						By controlling the underlying causal structure of these data, we know the ground truth treatment effects,
-						and can empirically evaluate the performance of nine commonly used models for causal inference.
-						We find that while each model has different strengths, all of them struggle with significant bias on at least one challenge.
-						Concerningly, on a challenge with no treatment effect present, 8 of the 9 models predicted a significant positive treatment effect, a false causal discovery.
-						The only exception is our novel hierarchical causal variant of BERT, SHERBERT, which further performs better than other models tested on most tasks.
-						While no benchmark can be fully representative of all challenges in natural language, the failure of all models on at least one challenge highlights the difficulty of causal inference in natural language and points to concrete areas for improvement.</p>
+						<h2>Paper (pre-print available on arXiv)</h2>
+						<h3><a href=https://arxiv.org/pdf/2009.09961.pdf>[PDF]</a></h3>
+						<p><b>Abstract:</b> Leveraging text, such as social media posts,
+						for causal inferences requires the use of NLP
+						models to ‘learn’ and adjust for confounders,
+						which could otherwise impart bias. However, evaluating such models is challenging,
+						as ground truth is almost never available. We
+						demonstrate the need for empirical evaluation
+						frameworks for causal inference in natural language by showing that existing, commonly
+						used models regularly disagree with one another on real world tasks. We contribute
+						the first such framework, generalizing several
+						challenges across these real world tasks. Using this framework, we evaluate a large set
+						of commonly used causal inference models
+						based on propensity scores and identify their
+						strengths and weaknesses to inform future improvements. We make all tasks, data, and models public to inform applications and encourage additional research. </p>
 					</div>
 				</section>
 				<!-- Data -->
@@ -209,6 +210,11 @@
 								<div class=" col-6-xlarge col-6-large col-6-medium text-center">
 									<img class="headshot" src="images/peter.jpg" alt="Peter West">
 									<h3><a href="https://homes.cs.washington.edu/~pawest/">Peter West</a>
+									</h3>
+								</div>
+								<div class=" col-6-xlarge col-6-large col-6-medium text-center">
+									<img class="headshot" src="images/maria.jpg" alt="Maria Glenski">
+									<h3><a href="https://www.pnnl.gov/people/maria-glenski">Maria Glenski</a>
 									</h3>
 								</div>
 							</div>

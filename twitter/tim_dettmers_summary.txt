@@ -1,0 +1,7 @@
+
+Loading data from /projects/bdata/bdatasets/data/twitter_data_*.json.
+
+Finished loading in 180.893 minutes.
+Loaded 264,268,540 tweets
+Found 1,714,108 unique users.
+1,059,578 users have at least 10 tweets.

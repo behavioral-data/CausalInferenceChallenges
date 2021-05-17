@@ -1,0 +1,37 @@
+{
+	"Signal Intensity": {
+		"bias_ipw": {"pearson": -0.22994879885350955, "spearman": 0.012030075187969924},
+		"spearman": {"pearson": 0.45097379263578685, "spearman": 0.6508653122648608},
+		"bias_strat": {"pearson": -0.5865746467541983, "spearman": -0.544360902255639},
+		"test_acc": {"pearson": 0.13813004639846121, "spearman": 0.21353383458646616},
+		"mse_ipsw": {"pearson": 0.1588670299833933, "spearman": 0.19939804364183591}
+	},
+	"Absence of Treatment Effect": {
+		"bias_ipw": {"pearson": -0.1792164022203658, "spearman": -0.18787878787878787},
+		"spearman": {"pearson": 0.9975284822900515, "spearman": 0.9393939393939393},
+		"bias_strat": {"pearson": -0.04502399054311467, "spearman": -0.10303030303030303},
+		"test_acc": {"pearson": 0.9975684860060309, "spearman": 0.8545454545454544},
+		"mse_ipsw": {"pearson": 0.2839991594043058, "spearman": 0.8303030303030302}
+	},
+	"Number of Users": {
+		"bias_ipw": {"pearson": 0.8331980749847131, "spearman": 0.7548387096774194},
+		"spearman": {"pearson": 0.941835252648923, "spearman": 0.9262104022123924},
+		"bias_strat": {"pearson": 0.9126402007768518, "spearman": 0.89321468298109},
+		"test_acc": {"pearson": 0.9403571675006221, "spearman": 0.935483870967742},
+		"mse_ipsw": {"pearson": 0.8895535596418179, "spearman": 0.9340904030282786}
+	},
+	"Strength of Selection Effect": {
+		"bias_ipw": {"pearson": 0.7487875349831102, "spearman": 0.8225563909774435},
+		"spearman": {"pearson": 0.9940127037787032, "spearman": 0.9665288385658837},
+		"bias_strat": {"pearson": 0.9381001960696737, "spearman": 0.849624060150376},
+		"test_acc": {"pearson": 0.9914785648630119, "spearman": 0.9774436090225563},
+		"mse_ipsw": {"pearson": 0.4027965673670311, "spearman": 0.8133935289691495}},
+
+	"Linguistic Complexity": {
+		"bias_ipw": {"pearson": 0.862382326479218, "spearman": 0.8602251407129458},
+		"spearman": {"pearson": 0.9950661664256231, "spearman": 0.980668168168168},
+		"bias_strat": {"pearson": 0.9484663904608681, "spearman": 0.9097560975609758},
+		"test_acc": {"pearson": 0.9937385075016916, "spearman": 0.981613508442777},
+		"mse_ipsw": {"pearson": 0.38271062272659595, "spearman": 0.5701408450704225}
+	}
+}

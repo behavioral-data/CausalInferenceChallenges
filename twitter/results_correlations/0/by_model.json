@@ -1,0 +1,71 @@
+{
+	"Logistic_Regression": {
+		"bias_ipw": {"pearson": 0.46184593590186496, "spearman": 0.41958041958041964},
+		"spearman": {"pearson": -0.017632913147623483, "spearman": 0.5587188612099645},
+		"bias_strat": {"pearson": 0.2416171800471331, "spearman": 0.5174825174825175},
+		"test_acc": {"pearson": 0.5289379685849014, "spearman": 0.8881118881118882},
+		"mse_ipsw": {"pearson": 0.9772530869119216, "spearman": 0.8041958041958043}
+	},
+	"Simple_NN_(1gram)": {
+		"bias_ipw": {"pearson": 0.4218339114337674, "spearman": 0.5664335664335665},
+		"spearman": {"pearson": 0.027905836320807606, "spearman": 0.35231316725978645},
+		"bias_strat": {"pearson": 0.5456359662243049, "spearman": 0.7132867132867133},
+		"test_acc": {"pearson": 0.7142851046286429, "spearman": 0.7622377622377624},
+		"mse_ipsw": {"pearson": 0.9970189037362387, "spearman": 0.7622377622377624}
+	},
+	"HBERT": {
+		"bias_ipw": {"pearson": -0.2534428982011307, "spearman": -0.16783216783216784},
+		"spearman": {"pearson": 0.8570276779871125, "spearman": 0.786476868327402},
+		"bias_strat": {"pearson": -0.1907687044885836, "spearman": -0.1258741258741259},
+		"test_acc": {"pearson": 0.8960191826072589, "spearman": 0.7832167832167832},
+		"mse_ipsw": {"pearson": 0.992128899171855, "spearman": 0.6083916083916086}
+	},
+	"Logistic_Regression_counts": {
+		"bias_ipw": {"pearson": 0.4390856504996111, "spearman": 0.46153846153846156},
+		"spearman": {"pearson": 0.034739443347522776, "spearman": 0.5871886120996441},
+		"bias_strat": {"pearson": 0.2783372739323891, "spearman": 0.5384615384615385},
+		"test_acc": {"pearson": 0.6119005475500727, "spearman": 0.9160839160839163},
+		"mse_ipsw": {"pearson": 0.6715915136600066, "spearman": 0.5874125874125874}
+	},
+	"Logistic_Regression_LDA": {
+		"bias_ipw": {"pearson": 0.24460235295907554, "spearman": 0.2517482517482518},
+		"spearman": {"pearson": 0.8529725744937808, "spearman": 0.5516014234875445},
+		"bias_strat": {"pearson": 0.25660758750955237, "spearman": 0.4825174825174825},
+		"test_acc": {"pearson": 0.7706716255921741, "spearman": 0.8531468531468532},
+		"mse_ipsw": {"pearson": 0.9980685640717458, "spearman": 0.5734265734265735}
+	},
+	"Simple_NN_counts": {
+		"bias_ipw": {"pearson": 0.17176721279080365, "spearman": -0.04195804195804196},
+		"spearman": {"pearson": -0.14105505562432905, "spearman": 0.4875444839857651},
+		"bias_strat": {"pearson": 0.35347328294010866, "spearman": 0.5034965034965035},
+		"test_acc": {"pearson": 0.5173761996742564, "spearman": 0.8601398601398602},
+		"mse_ipsw": {"pearson": 0.9920270520577213, "spearman": 0.5524475524475525}
+	},
+	"Logistic_Regression_(1gram)": {
+		"bias_ipw": {"pearson": 0.5308195858434616, "spearman": 0.6503496503496504},
+		"spearman": {"pearson": 0.12962245105899153, "spearman": 0.4875444839857651},
+		"bias_strat": {"pearson": 0.5206659627252123, "spearman": 0.6713286713286714},
+		"test_acc": {"pearson": 0.7364736246070024, "spearman": 0.8951048951048951},
+		"mse_ipsw": {"pearson": 0.6696103132265221, "spearman": 0.8531468531468532}
+	},
+	"oracle": {
+		"bias_ipw": {"pearson": 0.2543684892437624, "spearman": 0.4125874125874127},
+		"spearman": {"pearson": 0.0, "spearman": -0.17407765595569785},
+		"bias_strat": {"pearson": 0.15925171522882342, "spearman": 0.1328671328671329},
+		"test_acc": {"pearson": 0.23952476859413166, "spearman": 0.49650349650349657},
+		"mse_ipsw": {"pearson": NaN, "spearman": NaN}
+	},
+	"Simple_NN_LDA": {
+		"bias_ipw": {"pearson": 0.24757711184847514, "spearman": 0.16783216783216784},
+		"spearman": {"pearson": 0.029050280723429807, "spearman": 0.06049822064056939},
+		"bias_strat": {"pearson": 0.25212325624225884, "spearman": 0.31468531468531474},
+		"test_acc": {"pearson": 0.8722288971978225, "spearman": 0.7202797202797203},
+		"mse_ipsw": {"pearson": 0.9980488237322651, "spearman": 0.5874125874125874}},
+	"Simple_NN": {
+		"bias_ipw": {"pearson": 0.28452942268646203, "spearman": 0.2377622377622378},
+		"spearman": {"pearson": -0.14990906033201717, "spearman": 0.494661921708185},
+		"bias_strat": {"pearson": 0.307362297054038, "spearman": 0.5734265734265735},
+		"test_acc": {"pearson": 0.5467593505227504, "spearman": 0.9370629370629372},
+		"mse_ipsw": {"pearson": 0.9928195444394008, "spearman": 0.7272727272727274}
+	}
+}
